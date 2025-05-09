@@ -69,6 +69,21 @@ export const useProductStore = create((set, get) => ({
             }finally{
                 set({loading : false})
             }
+        },
+
+        getProduct : async(id) => {
+            set({loading : true})
+            try {
+                const response = await axios.get(`${BASEURL}/api/products/${id}`);
+                const data = response.data.data;
+                set({formData : {name : data.name, price : data.price, image : data.image}});
+            } catch (error) {
+                console.log("Error in getProduct function", error);
+                toast.error("Something went wrong");
+
+            }finally{
+                set({loading : false});
+            }
         }
 })
 )

@@ -5,7 +5,7 @@ import  {useThemeStore}  from '../store/useThemeStore'
 
 const ThemeSelector = () => {
     const { theme, setTheme } = useThemeStore();
-    console.log("Theme : ", theme)
+    //console.log("Theme : ", theme)
 
     return (
         <div className='dropdown dropdown-end'>

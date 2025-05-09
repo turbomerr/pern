@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx"
-import ProductPage from "./pages/ProductPage.jsx";
 import Navbar from "./components/Navbar.jsx"
 import { useThemeStore } from "./store/useThemeStore.js";
 import { Toaster } from "react-hot-toast";
+import ProductPage from "./pages/ProductPage.jsx";
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/products/:id" element={<ProductPage />} />
       </Routes>
     </div>
   )

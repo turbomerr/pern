@@ -15,7 +15,7 @@ const HomePage = () => {
   }, [fetchProducts])
 
 
-  console.log(products)
+  //console.log(products)
   return (
     <main className='max-w-6xl mx-auto py-8'>
       <div className='flex justify-between items-center mb-8'>
@@ -29,7 +29,7 @@ const HomePage = () => {
       </div>
 
       <AddProductModal/>
-      
+
       {error && <div className="alert alert-error mb-8">{error}</div>}
 
 
