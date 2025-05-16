@@ -5,7 +5,8 @@ import { Package2, DollarSign, Images } from 'lucide-react';
 
 const AddProductModal = () => {
 
-    const { addProduct, formData, setFormData, loading } = useProductStore()
+    const { addProduct, setFormData, loading } = useProductStore()
+    const formData = useProductStore((state) => state.formData);
 
 
     return (
