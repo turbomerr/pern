@@ -17,7 +17,7 @@ const ProductPage = () => {
     getProduct(id)
   }, [getProduct, id])
 
-  console.log(currentProduct)
+  //console.log(currentProduct)
 
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this product?")) {
