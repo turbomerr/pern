@@ -69,7 +69,7 @@ const ProductPage = () => {
             className='space-y-6 '>
             <div className='form-control'>
               <label className='label'>
-                <span className='label-text text-base font-medium'>
+                <span className='label-text '>
                   Product Name
                 </span>
               </label>
