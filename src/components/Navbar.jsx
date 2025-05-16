@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const { pathname } = useResolvedPath();
     const isHomePage = pathname == "/";
-    const {products} = useProductStore()
+    const { products } = useProductStore()
 
     return (
 
@@ -29,15 +29,17 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className='flex items-center gap-4'>
-                        <ThemeSelector/>
+                        <ThemeSelector />
 
                         {isHomePage && (
                             <div className="indicator">
                                 <div className='p-2 rounded-full hover:bg-base-200 transition-colors'>
-                                    <ShoppingBag className='size-5'/>
-                                    <span className='badge badge-sm badge-primary indicator-item'>
-                                    {products.length}
-                                    </span>
+                                    <ShoppingBag className='size-5' />
+                                    {products.length > 0 && (
+                                        <span className='badge badge-sm badge-primary indicator-item'>
+                                            {products.length}
+                                        </span>
+                                    )}
                                 </div>
                             </div>
                         )}
