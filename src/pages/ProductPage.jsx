@@ -52,7 +52,7 @@ const ProductPage = () => {
 
 
   return (
-    <div className='max-w-4xl mx-auto py-8'>
+    <div className='max-w-4xl mx-auto py-8 px-4 container'>
       <div className='flex justify-start items-center mb-8'>
 
         <button className='btn btn-ghost hover:text-primary' onClick={() => navigate("/")}>
@@ -108,12 +108,12 @@ const ProductPage = () => {
                 className='input input-bordered focus:input-primary w-full  transition-colors duration-200' />
             </div>
 
-            <div className='flex justify-between'>
-              <button onClick={() => handleDelete(id)} type='button' className='btn btn-error'>
+            <div className='flex justify-between mt-4'>
+              <button onClick={() => handleDelete(id)} type='button' className=' flex items-center p-2 text-white bg-red-500 rounded-lg'>
                 <Trash className='size-4 mr-2' />
                 Delete Product
               </button>
-              <button type='submit' onClick={() => handleSave()} className='btn btn-success ' disabled={loading || !formData.name || !formData.price || !formData.image}>
+              <button type='submit' onClick={() => handleSave()} className=' flex items-center p-2 text-white bg-primary rounded-lg' disabled={loading || !formData.name || !formData.price || !formData.image}>
                 {loading ?
                   (
                   <span className="loading loading-spinner loading-md text-primary"></span>

@@ -30,6 +30,14 @@ const HomePage = () => {
 
       <AddProductModal/>
 
+      {products.length === 0 && !loading && (
+          <div className='flex flex-col items-center justify-center h-96 space-y-4'>
+            <Package className='size-12 text-primary'/>
+            <h2 className='text-2xl font-semibold'>No Product Found</h2>
+            <p className='text-base-content/50'>Get started by adding your first product to the inventory</p>
+          </div>
+        )}
+
       {error && <div className="alert alert-error mb-8">{error}</div>}
 
 
@@ -38,19 +46,13 @@ const HomePage = () => {
           <div className="loading loading-spinner loading-lg text-primary"></div>
         </div>
       ) : (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 md:gap-8'>
-          {products.map((product, key) => (
-            <ProductCard key={key} product={product} />
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center'>
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>)}
 
-        {products.length === 0 && !loading && (
-          <div className='flex flex-col items-center justify-center h-96 gap-4'>
-            <Package className='size-12 text-primary'/>
-            <h2 className='text-2xl font-semibold'>No Product Found</h2>
-            <p className='text-base-content/50'>Get started by adding your first product to the inventory</p>
-          </div>
-        )}
+        
 
     </main>
   )
