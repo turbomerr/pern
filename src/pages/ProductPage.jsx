@@ -26,6 +26,12 @@ const ProductPage = () => {
     }
   };
 
+  const handleSave = () => {
+    setTimeout(() => {
+      navigate("/")
+    }, 2000)
+  }
+
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
@@ -107,7 +113,7 @@ const ProductPage = () => {
                 <Trash className='size-4 mr-2' />
                 Delete Product
               </button>
-              <button type='submit' className='btn btn-success ' disabled={loading || !formData.name || !formData.price || !formData.image}>
+              <button type='submit' onClick={() => handleSave()} className='btn btn-success ' disabled={loading || !formData.name || !formData.price || !formData.image}>
                 {loading ?
                   (
                   <span className="loading loading-spinner loading-md text-primary"></span>
